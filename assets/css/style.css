@@ -1,0 +1,297 @@
+:root {
+    --sidebar-width: 250px;
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f4f6f9;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding-top: 20px;
+    overflow-y: auto;
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.sidebar.collapsed {
+    margin-left: calc(-1 * var(--sidebar-width));
+}
+
+.sidebar .brand {
+    padding: 15px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-item {
+    margin-bottom: 5px;
+}
+
+.sidebar .nav-link {
+    color: #fff;
+    padding: 10px 25px;
+    transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar .nav-link.active {
+    /* background-color: var(--primary-color); */
+}
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.main-content.expanded {
+    margin-left: 0;
+}
+
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+}
+
+.metric-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.metric-card i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.metric-card .metric-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sidebar .nav-link[data-bs-toggle="collapse"]::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    transition: transform 0.3s;
+}
+
+.sidebar .nav-link[data-bs-toggle="collapse"][aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+.sidebar .collapse-menu {
+    padding-left: 2.5rem;
+}
+
+/* .sidebar .nav-link[data-bs-toggle="collapse"] {
+    
+} */
+.nav-link[aria-expanded]:after {
+    display: none !important;
+}
+
+
+
+
+/* Search-Sort Table Styling */
+/* Add margin to the Show entries */
+.dataTables_length {
+    margin-bottom: 1rem;
+}
+
+/* Add margin to the Search */
+.dataTables_filter {
+    margin-bottom: 1rem;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 7px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.table-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.table thead {
+    background-color: #27a9e3;
+    color: white;
+    text-align: center;
+}
+
+.table th,
+.table td {
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.table thead th {
+    font-size: 1rem;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Adjust margin for table links on small screens */
+@media (max-width: 576px) {
+    table tbody a {
+        margin-bottom: 0.5rem !important;
+    }
+}
+
+
+/* Start Card in Accounting  */
+.stat-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card .icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-title {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.stat-card .stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+
+/* Form styling  */
+.form-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+}
+
+.form-heading {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.btn-outline-secondary,
+.btn-outline-danger {
+    border-radius: 8px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.flatpickr {
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.form-container {
+    background-color: #f7f7f7;
+    padding: 40px;
+    border-radius: 8px;
+}
